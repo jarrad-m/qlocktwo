@@ -14,7 +14,7 @@ const LetterWrapper = styled.div`
 `
 
 function Clock() {
-    const illuminatedLetters = [0,1,3 , 4, 22]
+    const illuminatedLetters = [0, 1, 3, 4, 33, 34, 35, 36, 44, 45, 46, 47, 70, 71, 72, 73]
     return (
         <LetterWrapper>
         {   
