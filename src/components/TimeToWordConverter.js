@@ -1,6 +1,6 @@
 
 
-//takes  an object with current minutes and seconds, returns an array 
+//takes an object with current minutes and seconds, returns an array 
 function TimeToWordConverter(time) {
 
     const letterIndex = [];
@@ -61,12 +61,11 @@ function TimeToWordConverter(time) {
     
     if (time.minutes > 34) {
         adjustedHours = adjustedHours + 1;
-        console.log(adjustedHours)
     }
-    console.log(adjustedHours)
+
     switch (adjustedHours) {
         case 1:
-            letterIndex.push(65,66,67);
+            letterIndex.push(55,56,57);
             break;
 
         case 2:
@@ -98,7 +97,7 @@ function TimeToWordConverter(time) {
             break;
 
         case 9:
-            letterIndex.push(51, 52, 53, 54, 55);
+            letterIndex.push(51, 52, 53, 54);
             break;
         
         case 10:

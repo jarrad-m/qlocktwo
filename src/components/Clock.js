@@ -2,9 +2,6 @@ import React from 'react';
 import { letters } from './letterConfig.js';
 import styled from 'styled-components';
 
-
-//const letters = ["A","b"]
-
 const LetterWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(11, 20px);
@@ -13,13 +10,13 @@ const LetterWrapper = styled.div`
     grid-row-gap: 0px;
 `
 
-function Clock() {
-    const illuminatedLetters = [0, 1, 3, 4, 33, 34, 35, 36, 44, 45, 46, 47, 70, 71, 72, 73]
+function Clock({letterIndex, additionalMinutes}) {
+    
     return (
         <LetterWrapper>
         {   
             letters.map((item, i) => {
-                if (illuminatedLetters.includes(i)) {
+                if (letterIndex.includes(i)) {
                     return (
                         <div key={i} value={item} style={{color: "red"}}>
                             {item} 
