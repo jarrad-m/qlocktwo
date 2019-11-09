@@ -60,7 +60,12 @@ function TimeToWordConverter(time) {
 
     
     if (time.minutes > 34) {
-        adjustedHours = adjustedHours + 1;
+        if (adjustedHours === 12 ) {
+            adjustedHours = 1;
+        }
+        else {
+            adjustedHours = adjustedHours + 1;
+        }
     }
 
     switch (adjustedHours) {

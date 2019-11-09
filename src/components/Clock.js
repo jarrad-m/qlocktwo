@@ -9,19 +9,20 @@ const ClockWrapper = styled.div`
     justify-content: center;
     height: 100vh;
     padding: 40px;    
+    font-family: 'DINProLight';
 `
 
 const LetterWrapper = styled.div`
     display: grid;
-    grid-template-columns: repeat(11, 20px);
-    grid-template-rows: repeat(10, 1fr);
-    grid-column-gap: 23px;
-    grid-row-gap: 17px;
+    grid-template-columns: repeat(11,20px);
+    grid-template-rows: repeat(10,1fr);
+    grid-column-gap: 19px;
+    grid-row-gap: 12px;
     font-size: 26px;
-    padding: 60px;
-    box-shadow: 1px 7px 20px 2px rgba(0, 0 , 0, 0.3);
-    position: relative
-    background: gray;
+    padding: 100px;
+    box-shadow: -2px 20px 20px -10px rgba(0,0 ,0,0.4);
+    position: relative;
+    background: #ececec;
     color: #a5a5a5;
 `
 const AdditionalMinutesBox = styled.div`
