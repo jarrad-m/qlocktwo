@@ -109,7 +109,7 @@ function TimeToWordConverter(time) {
             break;
 
         case 12:
-            letterIndex.push(93, 94, 95, 96, 97, 96);
+            letterIndex.push(93, 94, 95, 96, 97, 98);
             break;        
         default:
     }

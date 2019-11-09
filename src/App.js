@@ -14,23 +14,30 @@ class App extends React.Component {
     //this.handleClick = this.handleClick.bind(this);
   }
 
-  componentDidMount() {
-    setInterval(this.setTime(), 1000 * 30);    
+  componentDidMount() {  
+    this.setTime();
+    this.interval = setInterval(this.setTime, 1000 * 15);
   }
   
-  getCurrentTime() {
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+  
+  getCurrentTime = () => {
     const date =  new Date();
+    const minutes = date.getMinutes();
     let hours = date.getHours();
     if (hours > 12) {
         hours -= 12;
     } else if (hours === 0) {
       hours = 12;
     }
-    return { hours: hours, minutes: date.getMinutes() };    
+    return { hours: hours, minutes: minutes };    
   }
 
-  setTime() {
+  setTime = () => {
     const time = timeToWordConverter(this.getCurrentTime());
+    console.log(time)
     this.setState({
       letterIndex: time.letters,
       additionalMinutes: time.additionalMinutes        
