@@ -15,7 +15,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.setTime();
+    setInterval(this.setTime(), 1000 * 30);    
   }
   
   getCurrentTime() {
