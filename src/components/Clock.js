@@ -9,21 +9,37 @@ const ClockWrapper = styled.div`
     justify-content: center;
     height: 100vh;
     padding: 40px;    
-    font-family: 'DINProLight';
+    font-family: 'DINProRegular';
 `
 
 const LetterWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(11,20px);
     grid-template-rows: repeat(10,1fr);
-    grid-column-gap: 19px;
-    grid-row-gap: 12px;
-    font-size: 26px;
-    padding: 100px;
+    grid-column-gap: 9px;
+    grid-row-gap: 10px;
+    font-size: 22px;
+    line-height: 22px;
+    padding: 90px;
     box-shadow: -2px 20px 20px -10px rgba(0,0 ,0,0.4);
     position: relative;
-    background: #ececec;
+    background: #e0e0e0;
     color: #a5a5a5;
+    
+    span {
+        background: #0000004d;
+        color: transparent;
+        text-shadow: 0px 2px 3px rgb(247, 244, 244);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+            background-clip: text;
+
+        &.illuminated {
+            color: white;
+            text-shadow: 0px 0px 20px rgb(255, 255, 255);
+            background: transparent;
+        }
+    }
 `
 const AdditionalMinutesBox = styled.div`
     position: absolute;
@@ -71,15 +87,15 @@ function Clock({letterIndex, additionalMinutes}) {
                 letters.map((item, i) => {
                     if (letterIndex.includes(i)) {
                         return (
-                            <div key={i} value={item} style={{color: "white"}}>
-                                {item} 
+                            <div key={i} value={item} >
+                                <span className="illuminated">{item}</span>
                             </div>
                         );
                     }
                     else {
                         return (
                             <div key={i} value={item} >
-                                {item} 
+                                <span>{item}</span>
                             </div>
                         );
                     }
